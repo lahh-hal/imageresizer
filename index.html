@@ -4,7 +4,7 @@
   <title>Image Resizer</title>
 </head>
 <body>
-  <form action="">
+  <form>
     <input type="file" id="inputImage">
     <br><br>
     <label for="resolution">Resolution:</label>
@@ -23,7 +23,8 @@
     const output = document.getElementById("output");
     const downloadLink = document.getElementById("downloadLink");
 
-    submitBtn.addEventListener("click", function() {
+    submitBtn.addEventListener("click", function(e) {
+      e.preventDefault();
       const reader = new FileReader();
       reader.onload = function() {
         const img = new Image();
